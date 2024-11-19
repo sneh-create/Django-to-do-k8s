@@ -42,3 +42,9 @@ If you have found my softwares to be of any use to you, do consider helping me p
 | PayPal | <a href="https://paypal.me/omkarpathak27" target="_blank"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" alt="Donate via PayPal!" title="Donate via PayPal!" /></a> |
 |:-------------------------------------------:|:-------------------------------------------------------------:|
 | ₹ (INR)  | <a href="https://www.instamojo.com/@omkarpathak/" target="_blank"><img src="https://www.soldermall.com/images/pic-online-payment.jpg" alt="Donate via Instamojo" title="Donate via instamojo" /></a> |
+
+
+Kind k8s :
+
+kubectl apply -f namespace.yml -f deployment.yml -f service.yml
+kubectl port-forward service/dj-service -n dev-dj 8000:8000 --address=0.0.0.0
