@@ -17,7 +17,7 @@ COPY . /app/
 EXPOSE 8000
 
 # Run database migrations
-RUN python manage.py migrate
+RUN python /app/todo/manage.py migrate
 
 # Command to run the Django server
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "/app/todo/manage.py", "runserver", "0.0.0.0:8000"]
