@@ -1,0 +1,23 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: dj-deployment
+  namespace: dev-dj
+  labels:
+    app: dev-dj
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dev-dj
+  template:
+    metadata:
+      labels:
+        app: dev-dj
+    spec:
+      containers:
+      - name: dj-container
+        image: snehcreate/djangok8s
+        ports:
+        - containerPort: 8000
