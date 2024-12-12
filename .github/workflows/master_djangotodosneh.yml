@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: hub.docker.com/${{ secrets.AzureAppService_ContainerUsername_bb070edb8f6f4b30b9157c3be8d99609 }}/snehcreate/djangok8s:${{ github.sha }}
+        tags: docker.io/${{ secrets.AzureAppService_ContainerUsername_bb070edb8f6f4b30b9157c3be8d99609 }}/snehcreate/djangok8s:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
