@@ -21,4 +21,4 @@ spec:
           image: testcontainerapp.azurecr.io/django:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 8000
