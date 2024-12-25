@@ -71,6 +71,7 @@ jobs:
       # Builds and pushes an image up to your Azure Container Registry
       - name: Build and push image to ACR
         run: |
+          az acr login --name testcontainerapp -u testcontainerapp -p "Vgbjej3yu3nhbnCYJ7OieLduPN5X3xGjrpHVqoRUxb+ACRB/mhNb"
           docker build -t testd:latest .
           docker tag testd:latest testcontainerapp.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }}
           docker push testcontainerapp.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }} 
@@ -115,6 +116,11 @@ jobs:
         run: |
           result=$(az aks show --resource-group ${{ env.CLUSTER_RESOURCE_GROUP }} --name ${{ env.CLUSTER_NAME }} --query "apiServerAccessProfile.enablePrivateCluster")
           echo "PRIVATE_CLUSTER=$result" >> "$GITHUB_OUTPUT"
+
+      # login to acr
+      - name: Build and push image to ACR
+        run: |
+          az acr login --name testcontainerapp -u testcontainerapp -p "Vgbjej3yu3nhbnCYJ7OieLduPN5X3xGjrpHVqoRUxb+ACRB/mhNb"
 
       # Deploys application based on given manifest  file
       - name: Deploys application
